@@ -15,6 +15,8 @@ import org.springframework.web.bind.annotation.RestController;
 import br.com.projeto.api.modelo.Pessoa;
 import br.com.projeto.api.repositorio.Repositorio;
 import br.com.projeto.api.servico.Servico;
+import jakarta.validation.Valid;
+import br.com.projeto.api.modelo.Cliente;
 
 @RestController
 public class Controle {
@@ -123,6 +125,11 @@ public class Controle {
     @GetMapping("/boasVindas/{nome}")
     public String boasVindas(@PathVariable String nome) {
         return "Seja bem vindo(a) " + nome;
+    }
+
+    @PostMapping("/cliente")
+    public void cliente(@Valid @RequestBody Cliente obj) {
+
     }
 
 }
